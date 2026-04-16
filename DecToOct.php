@@ -11,7 +11,9 @@
     $strOctNum = "";
     while ($uTempVal > 0)
     {
-        $strOctNum = ($uTempVal % 8) . $strOctNum;
+        $nOctDigit = $uTempVal % 8;
+        $chOctDigit = chr($nOctDigit + ord("0"));
+        $strOctNum = $chOctDigit . $strOctNum;
         $uTempVal = intdiv($uTempVal, 8);
     }
     if(strlen($strOctNum) == 0)
